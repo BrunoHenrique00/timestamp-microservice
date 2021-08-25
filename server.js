@@ -21,6 +21,7 @@ app.get("/", function (req, res) {
 function formatDate(date){
   let dateFormated = new Date(date).toString()
   dateFormated = dateFormated.replace(' (Coordinated Universal Time)' , '')
+  dateFormated = dateFormated.replace('+', ' ')
   let newStr = dateFormated.split('')
   newStr.splice(3, 0, ',')
   return newStr.join("")
